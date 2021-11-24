@@ -84,7 +84,7 @@ export default function Main() {
       bottom: 'auto',
       marginRight: '-50%',
       width: '20rem',
-      height: '26rem',
+      height: '30rem',
       textAlign: 'center',
       transform: 'translate(-50%, -50%)',
     },
@@ -102,13 +102,6 @@ export default function Main() {
   const [rowData, setRows] = React.useState([]);
 
   const getSelectedRowData = () => {
-    //setSelectValue(gridApi.getSelectedRows()[0].prodId, gridApi.getSelectedRows()[0].prodName, gridApi.getSelectedRows()[0].prodNumber, gridApi.getSelectedRows()[0].rentalDay);
-    // const data = {
-    //   prodId: gridApi.getSelectedRows()[0].prodId,
-    //   prodName: gridApi.getSelectedRows()[0].prodName,
-    //   prodNumber: gridApi.getSelectedRows()[0].prodNumber,
-    //   rentalDay: gridApi.getSelectedRows()[0].rentalDay
-    // }
     setProdId(gridApi.getSelectedRows()[0].prodId)
     setProdName(gridApi.getSelectedRows()[0].prodName)
     setProdNumber(gridApi.getSelectedRows()[0].prodNumber)
@@ -220,10 +213,12 @@ export default function Main() {
             style={customBoxStyles}
             isOpen={returnOpen}
             >
+              <h3>반납하기</h3>
               <div className="TxtFDiv">
                 <TextField 
                   className="TxtF"
                   label="id"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={prodId}
                   onChange={onProdIdHandler}
@@ -231,6 +226,7 @@ export default function Main() {
                 <TextField 
                   className="TxtF"
                   label="물품명"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={prodName}
                   onChange={onNameHandler}
@@ -238,12 +234,14 @@ export default function Main() {
                 <TextField 
                   className="TxtF"                
                   label="물품번호"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={prodNumber}
                   onChange={onNumHandler}/>
                 <TextField 
                   className="TxtF"
                   label="대여일수"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={rentalDay}
                   onChange={onDayHandler}
@@ -254,8 +252,8 @@ export default function Main() {
                 checked={returnChecked}
                 onChange={onReturnCheckedHandler}
                 />반납하시겠습니까?
-                <button onClick={Return}>반납</button>
-                <button onClick={closeReturnModal}>닫기</button>
+                <button className="modalBtn" onClick={Return}>반납</button>
+                <button className="modalBtn" onClick={closeReturnModal}>닫기</button>
             </div>
           </Modal>
           <button className="deleteBtn" onClick={ () => onClickDelete() }>삭제</button>
@@ -264,16 +262,19 @@ export default function Main() {
             style={customBoxStyles}
             isOpen={deleteOpen}
             >
+            <h3>삭제하기</h3>
             <div className="TxtFDiv">
               <TextField 
                 className="TxtF"
                 label="id"
+                margin="normal"
                 inputProps={{ readOnly: true, }}
                 value={prodId}
                 onChange={onProdIdHandler}/>
               <TextField 
                 className="TxtF"
                 label="물품명"
+                margin="normal"
                 inputProps={{ readOnly: true, }}
                 value={prodName}
                 onChange={onNameHandler}
@@ -281,6 +282,7 @@ export default function Main() {
               <TextField 
                 className="TxtF"
                 label="물품번호"
+                margin="normal"
                 inputProps={{ readOnly: true, }}
                 value={prodNumber}
                 onChange={onNumHandler}
@@ -288,6 +290,7 @@ export default function Main() {
               <TextField 
                 className="TxtF"
                 label="대여일수"
+                margin="normal"
                 inputProps={{ readOnly: true, }}
                 value={rentalDay}
                 onChange={onDayHandler}
@@ -298,8 +301,8 @@ export default function Main() {
               checked={deleteChecked}
               onChange={onDeleteCheckedHandler}
               />삭제하시겠습니까?
-              <button onClick={Delete}>삭제</button>
-              <button onClick={closeDeleteModal}>닫기</button>
+              <button className="modalBtn" onClick={Delete}>삭제</button>
+              <button className="modalBtn" onClick={closeDeleteModal}>닫기</button>
             </div>
           </Modal>
           <button className="registerBtn" onClick={ () => onClickRegister() }>등록</button>
@@ -310,12 +313,12 @@ export default function Main() {
             >
             <h3>등록하기</h3>
             <div classname="inputDiv">
-              <input
-                className="RegisterInput"
-                type="text"
-                value={prodName}
-                placeholder="물품명"
-                onChange={onNameHandler}/>
+                <input
+                  className="RegisterInput"
+                  type="text"
+                  value={prodName}
+                  placeholder="물품명"
+                  onChange={onNameHandler}/>
                 <input
                   className="RegisterInput"
                   type="text"
@@ -335,8 +338,8 @@ export default function Main() {
                   onChange={onRegisterCheckedHandler}
                   />등록하시겠습니까?
               </div>
-              <button onClick={Register}>등록</button>
-              <button onClick={closeRegisterModal}>닫기</button>
+              <button className="modalBtn" onClick={Register}>등록</button>
+              <button className="modalBtn" onClick={closeRegisterModal}>닫기</button>
           </Modal>
           <button className="viewBtn" onClick={ () => onClickView() }>조회</button>
           <div style={{width: '75rem', margin: '10px auto'}}>

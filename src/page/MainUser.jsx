@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import Modal from "react-modal";
 import Header from "../component/header";
-import { AgGridReact } from "ag-grid-react";
 import { TextField } from "@mui/material";
 import axios from "axios";
 
+import { AgGridReact } from "ag-grid-react";
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 
@@ -43,7 +43,7 @@ export default function MainUser() {
       bottom: 'auto',
       marginRight: '-50%',
       width: '20rem',
-      height: '26rem',
+      height: '30rem',
       textAlign: 'center',
       transform: 'translate(-50%, -50%)',
     },
@@ -118,30 +118,18 @@ export default function MainUser() {
           }).then((Response)=>{
             console.log(Response.data);
             if(Response.data=="대여중") {
-            //setRentState(0);
             alert("대여중인 물품은 대여할 수 없습니다!");
             }
             else {
-            //setRentState(1);
             alert("대여되었습니다:)\n대여물품 수령은 학생회관으로 와주세요!");
             }
             })
         . catch((Error)=>{console.log(Error)})
-          // console.log(rentState);
-          // if(rentState) {
-          //   return alert("대여되었습니다:)\n대여물품 수령은 학생회관으로 와주세요!");
-          // }
-          // else {
-          //   return alert("대여중인 물품은 대여할 수 없습니다!");
-          // }
-         
       }
       else {
         return alert('내용을 확인하고 체크해주세요!');
       }
     }
-
-
     
   }
 
@@ -188,9 +176,11 @@ export default function MainUser() {
             style={customBoxStyles}
             isOpen={rentOpen}
             >
+              <h3>대여하기</h3>
               <TextField 
                   className="TxtF"
                   label="id"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={prodId}
                   onChange={onProdIdHandler}
@@ -198,6 +188,7 @@ export default function MainUser() {
                 <TextField 
                   className="TxtF"
                   label="물품명"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={prodName}
                   onChange={onNameHandler}
@@ -205,12 +196,14 @@ export default function MainUser() {
                 <TextField 
                   className="TxtF"                
                   label="물품번호"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={prodNumber}
                   onChange={onNumHandler}/>
                 <TextField 
                   className="TxtF"
                   label="대여일수"
+                  margin="normal"
                   inputProps={{ readOnly: true, }}
                   value={rentalDay}
                   onChange={onDayHandler}
@@ -221,8 +214,8 @@ export default function MainUser() {
                 checked={checked}
                 onChange={onCheckedHandler}
                 />대여하시겠습니까?
-                <button onClick={Rent}>대여</button>
-                <button onClick={closeRentModal}>닫기</button>
+                <button className="modalBtn" onClick={Rent}>대여</button>
+                <button className="modalBtn" onClick={closeRentModal}>닫기</button>
           </Modal>
           <button className="viewBtn" onClick={ () => onClickView() }>조회</button>
           <div style={{width: '75rem', margin: '10px auto'}}>

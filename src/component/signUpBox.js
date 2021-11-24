@@ -56,17 +56,12 @@ export default function SignUpBox({ signUp, closeModal, checkAdmin }) {
   }
 
   const SignUp = () => {
-    console.log(check)
+    //console.log(check)
     axios.post('http://localhost:4000/login/register', {
       id: id,
       pw: pw,
       checkadmin: check
     })
-        // .then((Response)=>{
-        //     console.log(Response.data[0].checkAdmin)
-        // })
-        // .catch((Error)=>{console.log(Error)})
-    
   }
 
   return <>

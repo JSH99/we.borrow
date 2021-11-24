@@ -311,10 +311,43 @@
 }
 
 
-
 .TxtFDiv{
   display: block;
+  justify-content: center;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
 }
 .TxtF{
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+.RegisterInput{
+  padding-left: 1rem;
+  height: 3rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.modalBtn{
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background-color: black;
+  color: #d4f3f8;
+  width: 5.0rem;
+  height: 2.0rem;
+  font-weight: bolder;
+  cursor: pointer;
+  padding: 0 1rem;
+  text-align: center;
   margin: 0.5rem;
+}
+.detailsCheckr{
+  margin-top: 1.5rem;
+  margin-bottom: 1.3rem;;
+}
+.detailsCheck{
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;;
 }

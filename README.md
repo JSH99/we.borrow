@@ -1,6 +1,5 @@
 # :bulb:we.borrow:bulb:
-## 대여물품 관리 웹사이트
-[Origin Reposipory](https://github.com/ubeeni/we.borrow)
+## 대여물품 관리 웹사이트 [Origin Reposipory](https://github.com/ubeeni/we.borrow)
 ## 🛠Tech Stack🛠 
 <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=black"/></a> 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a> 

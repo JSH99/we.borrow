@@ -38,10 +38,8 @@
 }
 
 
-/* 여기부터 수정하면 됩니다, 디자이너님♡ */
 
 /* 공통 */
-
 .head{
   display: flex;
   justify-content: center;
@@ -310,7 +308,7 @@
   background-color: powderblue;
 }
 
-
+/* modal */
 .TxtFDiv{
   display: block;
   justify-content: center;

@@ -178,7 +178,6 @@ export default function Main() {
     axios.get('http://localhost:4000/api/printprod')
         .then((Response)=>{
             setRows(Response.data)
-            //console.log(Response.data)
         })
         .catch((Error)=>{console.log(Error)})
 

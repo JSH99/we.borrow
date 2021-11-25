@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 
 const db = sql.createConnection({
   "host": 'localhost',
-  "port":'3306', //포트번호
+  "port":'3306', //포트 번호
   "user": 'root',
-  "password": '',
+  "password": '', //DB 서버 비밀번호
   "database": 'weborrow',
 });
 

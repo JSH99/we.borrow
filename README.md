@@ -1,6 +1,6 @@
 # :bulb:we.borrow:bulb:
-## 대여물품 관리 웹사이트 
-**[Origin Reposipory]**(https://github.com/ubeeni/we.borrow)
+## 대여물품 관리 웹사이트
+
 ## 🛠Tech Stack🛠 
 <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=black"/></a> 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a> 
@@ -53,13 +53,12 @@ const Rent = () => {
           id: userId,
           num: prodId
           }).then((Response)=>{
-            console.log(Response.data);
             if(Response.data=="대여중") {
-            alert("대여중인 물품은 대여할 수 없습니다!");
-            }
+              alert("대여중인 물품은 대여할 수 없습니다!");
+              }
             else {
-            alert("대여되었습니다:)\n대여물품 수령은 학생회관으로 와주세요!");
-            }
+              alert("대여되었습니다:)\n대여물품 수령은 학생회관으로 와주세요!");
+              }
             })
         . catch((Error)=>{console.log(Error)})        
       }
